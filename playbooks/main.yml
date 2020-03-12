@@ -1,0 +1,7 @@
+- name: Test script
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+    - name: List current directory
+      shell: pwd && ls -al
