@@ -18,4 +18,4 @@ export TEMPLATE_IN="template.pkr.hcl"
 export TEMPLATE_OUT="template_out.pkr.hcl"
 
 envsubst < $TEMPLATE_IN > $TEMPLATE_OUT
-packer build -color=false $TEMPLATE_OUT > output.log
+packer build -color=false $TEMPLATE_OUT | tee output.log

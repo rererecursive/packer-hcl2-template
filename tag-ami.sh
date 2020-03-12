@@ -4,7 +4,7 @@ set -e
 BAKED_IMAGE_ID=$(jq -r '.builds[0].artifact_id' manifest.json | cut -d: -f2)
 echo "Baked image ID: ${BAKED_IMAGE_ID}"
 
-SOURCE_IMAGE_ID=$(grep -m 1 "Found Image ID:" output | awk '{print $NF}')
+SOURCE_IMAGE_ID=$(grep -m 1 "Found Image ID:" output.log | awk '{print $NF}')
 echo "Source image ID: ${SOURCE_IMAGE_ID}"
 
 SOURCE_IMAGE_INFO=$(aws ec2 describe-images \
